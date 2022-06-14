@@ -25,7 +25,6 @@ document.getElementById('searchHeadline').addEventListener('input', function(e) 
             for(article of articles) {
                 const li = document.createElement("li");
                 li.innerHTML = `<a href="/articles/${article.id}">${article.title}</a>`;
-                // li.innerHTML = "<a href='/article?id=" + article.id + "'>" + article.title + "</a>";
                 resultList.append(li);
             }
 

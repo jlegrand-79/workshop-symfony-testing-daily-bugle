@@ -22,3 +22,8 @@ header {
     margin-bottom: 1rem;
     border: 5px black solid;
 }
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

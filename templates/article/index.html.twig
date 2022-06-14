@@ -1,20 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArticleController!{% endblock %}
-
 {% block body %}
-    <div class="container px-4 py-5">
-        <div class="row align-items-center g-5 py-5" id="headline">
-            <div class="col-12 d-flex justify-content-center">
-                <img id="headlinePictureDetails" src="/uploads/{{article.picture}}" class="img-fluid" loading="lazy">
-            </div>
-            <div class="col-lg-12">
-                <h1 class="display-1 fw-bold text-center" id="headlineTitle">{{article.title}}</h1>
-            </div>
-            <div class="col-lg-8 mx-auto">
-                <p class="px-5 text-justify" id="headlineContent">{{article.content}}</p>
-                <cite class="d-block text-end">by {{article.author}}</cite>
-            </div>
+<h1 class="text-center display-3 fw-bold mb-3">Temporary title</h1>
+<div class="row">
+    {% for article in articles %}
+        <div class="col-lg-3 mb-3">
+                <div class="card h-100">
+                        <img src="/uploads/{{ article.picture }}" class="card-img-top" alt="{{ article.title }}">
+                        <div class="card-body d-flex flex-column">
+                                <time datetime="{{ article.date|date("Y-m-d") }}" class="mb-1 small text-muted text-end">
+                                        <i class="bi bi-calendar"></i>
+                                        {{ article.date|date("jS F Y") }}
+                                </time>
+                                <h5 class="card-title">{{ article.title }}</h5>
+                                <a href="{{ path('app_article_show', {'id': article.id}) }}"
+                                   class="btn btn-primary stretched-link mt-auto">
+                                        Read more
+                                </a>
+                        </div>
+                </div>
         </div>
-    </div>
+    {% endfor %}
+</div>
 {% endblock %}
+
+{% block title %}
+Articles
+{% endblock %}
+
