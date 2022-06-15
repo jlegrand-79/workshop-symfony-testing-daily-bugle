@@ -8,7 +8,7 @@ document.getElementById('changeHeadlineButton').addEventListener('click', functi
     fetch("/api/articles/random")
         .then(response => response.json())
         .then(function(article){
-            updateHeadline(article[0].title, article[0].picture, article[0].content)
+            updateHeadline(article[0].title, article[0].picture, article[0].summary)
         })
 });
 

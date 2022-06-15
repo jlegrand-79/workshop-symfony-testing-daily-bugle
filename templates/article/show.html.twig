@@ -11,10 +11,10 @@
             <p class="text-end fs-5">
                 <i class="bi bi-clock"></i>
                 Reading time <span class="badge bg-primary">
-                    {% if reding_time is defined %}
+                    {% if reading_time is defined %}
                     {{ reading_time }}
                     {% else %}
-                        X min
+                        ? min
                     {% endif %}
                 </span>
             </p>
@@ -31,7 +31,7 @@
         <div class="col-lg-8 offset-lg-2">
             <h1>Comments</h1>
             <ul id="comments">
-
+                {# @todo display comments if any #}
             </ul>
             <h2>Leave your comment</h2>
             {{ form(form) }}
