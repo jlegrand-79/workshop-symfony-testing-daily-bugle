@@ -1,8 +1,8 @@
-![](https://github.com/WildCodeSchool/workshop-symfony-testing-dayli-bugle/blob/main/assets/images/daily_buggle_logo.png?raw=true)
+![](https://github.com/WildCodeSchool/workshop-symfony-testing-daily-bugle/blob/main/assets/images/daily_buggle_logo.png?raw=true)
 
-# Dayli Bugle - new features
+# Daily Bugle - new features
 
-De nouvelles features sont au sprint backlog de l'équipe dev du Dayli Bugle.  
+De nouvelles features sont au sprint backlog de l'équipe dev du Daily Bugle.  
 - Une page pour consulter les articles récemment publiés
 - L'affichage du temps de lecture estimé d'un article
 - La possibilité de laisser des commentaires sur chaque article
