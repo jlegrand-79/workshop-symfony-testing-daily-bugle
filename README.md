@@ -105,7 +105,7 @@ The name of the test class (e.g. BlogPostTest):
 > Service\ReadingTime
 ```
 
-1. Ouvre le fihier `ReadingTimeTest.php`, il y aussi déjà un peu de code. la méthode de test devrait se nommer `testCalculate()`.
+1. Ouvre le fichier `ReadingTimeTest.php`, il y aussi déjà un peu de code. la méthode de test devrait se nommer `testCalculate()`.
 2. Active le moteur symfony avec `self::bootKernel()`.
 3. En t'appuyant sur la documentation, accède au service `ReadingTime::class`
 4. Vérifie avec `$this->assertSame()` que la méthode `calculate()` retourne bien le temps de lecture sur le ratio 250 mots / min en arrondissant à l'entier supérieur.  
@@ -149,7 +149,7 @@ https://symfony.com/doc/current/testing.html#resetting-the-database-automaticall
 
 Voici la marche à suivre :
 1. Crée dans la classe `ArticleControllerTest` la méthode `testCommentForm()`.
-2. Tu vas avoir besoin d'accéder aux champs du formulaire. En suivant la documentation, vérifie d'abord que la route `/articles/1` existe. Puis, avec ton crawler, sélectionne le bouton de soummission du formulaire `comment_submit`. Tu peux ensuite récupérer le formulaire auquel il est associé.
+2. Tu vas avoir besoin d'accéder aux champs du formulaire. En suivant la documentation, vérifie d'abord que la route `/articles/1` existe. Puis, avec ton crawler, sélectionne le bouton de soumission du formulaire `comment_submit`. Tu peux ensuite récupérer le formulaire auquel il est associé.
 4. Simule l'envoi du formulaire avec un commentaire de test.
 5. La soumission du fomulaire génére une redirection, il faudra que ton test suive cette redirection afin de vérifier si la page affiche bien le commentaire envoyé.  
 On t'explique ici comment procéder https://symfony.com/doc/current/testing.html#redirecting.
