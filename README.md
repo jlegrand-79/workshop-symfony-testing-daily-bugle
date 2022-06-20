@@ -24,7 +24,6 @@ yarn run dev
 Tu peux ensuite créer ton fichier `.env.local` en renseignant tes identifiants de BDD pour MYSQL. Et si tu souhaites voir ce que donne le projet dans l'état actuel, effectue la série :
 
 ```bash
-php bin/console d:d:d -f
 php bin/console d:d:c
 php bin/console d:m:m
 php bin/console d:f:l
@@ -40,10 +39,9 @@ php bin/phpunit
 
 Les tests que tu vas mettre en place vont sans doute avoir besoin d'accéder aux contenus de la base de données. Pour ne pas perturber ton environnement de dev, tu vas configurer une BDD dédiée.
 
-Comme cela est expliqué sur la [documentation de Symfony](https://symfony.com/doc/current/testing.html#configuring-a-database-for-tests), crée un fichier `.env.test.local` à partir du fichier `.env.test` et ajoutes-y la ligne suivante en prenant soin de modifier `db_user`, `db_password` et `db_name_test` par les valeurs appropriées.  
-⚠️ C'est une bonne pratique de nommer ta BDD de test avec le même nom que celle du `.env.local` __en ajoutant le suffixe__ `_test`.
+Comme cela est expliqué sur la [documentation de Symfony](https://symfony.com/doc/current/testing.html#configuring-a-database-for-tests), crée un fichier `.env.test.local` à partir du fichier `.env.test` et ajoutes-y la ligne suivante en prenant soin de modifier `db_user`, `db_password` et `db_name` par les valeurs appropriées.
 ```
-DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name_test?serverVersion=5.7"
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
 ```
 Tu peux ensuite effectuer les commandes suivantes pour terminer la configuration :
 ```bash
@@ -115,6 +113,9 @@ Voici un exemple de tests à effectuer, tu peux en écrire plus bien entendu :
 - 250 mots => 1 min
 - 500 mots => 2 min
 - 650 mots => 3 min
+ 
+> Astuce, tu peux utiliser la fonction str_repeat() pour générer des mots rapidement
+
 
 Lorsque les tests sont validés avec `php bin/phpunit`, il n'y a plus qu'à terminer le branchement dans le code source. Injecte ton service à la méthode `show()` du controller `ArticleController`. Le temps de lecture peut être affiché grâce à la variable `reading_time` déjà présente dans le template `show.html.twig`.
 
